@@ -42,7 +42,7 @@ async function run() {
     // Hardwired Query for a part that has partID '12345'
     // const query = { partID: '12345' };  this was changed to _id because thats whats in mongoDB
     // But we will use the parameter provided with the route
-    const query = { _id: ObjectId(req.params.item) };
+    const query = { _id: req.params.item };
 
     const part = await parts.findOne(query);
     console.log(part);
